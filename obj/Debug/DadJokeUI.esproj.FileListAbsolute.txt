@@ -1,0 +1,2 @@
+C:\Users\Marco\source\stateSide\DadJoke\DadJokeUI\obj\Debug\DadJokeUI.esproj.SuggestedBindingRedirects.cache
+C:\Users\Marco\source\stateSide\DadJoke\DadJokeUI\obj\Debug\DadJokeUI.esproj.CoreCompileInputs.cache
