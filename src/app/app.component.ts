@@ -12,10 +12,11 @@ import { DadJokeService } from 'src/services/DadJokeService';
   ],
 })
 export class AppComponent {
+ 
   public forecasts!: dadJoke;
   public image:string='';
   public timeStamp:number=0;
-  public linkPicture:string = "https://picsum.photos/200/100"
+  public linkPicture:string = "";
   public jokeCount:number =0;
   constructor(private serviceDadJoke:DadJokeService) {
     this.getNextJoke();
