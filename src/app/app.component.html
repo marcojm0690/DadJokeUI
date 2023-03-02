@@ -1,24 +1,19 @@
-﻿<h1 id="tableLabel">Weather forecast</h1>
+﻿<p-badge value="Number of jokes: {{jokeCount}}" size="large" severity="success">Number of Jokes</p-badge>
+<div class="center-screen">
 
-<p>This component demonstrates fetching data from the server.</p>
+<p-progressSpinner *ngIf="!forecasts || forecasts.setup ==''"></p-progressSpinner>
+<div  *ngIf="forecasts && forecasts.setup !=''" id="container" >
+<p-card header="Dad Joke!" [style]="{width: '360px'}"  styleClass="shadow-2">
+    <ng-template pTemplate="header">
+        <img alt="Card" [src]="getLinkPicture()">
+    </ng-template>
+    <p>{{forecasts.setup}}</p>
+    <p style="text-decoration: underline;">{{ forecasts.punchline }}</p>
+    <ng-template pTemplate="footer">
+        <p-button label="Next joke!" icon="pi pi-arrow-right" (onClick)="getNextJoke()"></p-button>
+    </ng-template>
+</p-card>
 
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
 
-<table *ngIf="forecasts">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
-        </tr>
-    </tbody>
-</table>
+    </div>
+</div>
